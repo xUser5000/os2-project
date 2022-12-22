@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: os-project
+spec:
+  containers:
+    - name: three-idiots
+      image: xuser5000/os-project
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 80

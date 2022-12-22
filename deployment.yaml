@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: my-first-deployment
+
+spec:
+  selector:
+    matchLabels:
+      app: os-project
+  replicas: 3
+  template:
+    metadata:
+      name: os-project
+      labels:
+        app: os-project
+    spec:
+      containers:
+        - name: three-idiots
+          image: xuser5000/os-project
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
